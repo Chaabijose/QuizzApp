@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen(this.startQuiz,{super.key});
 
-  @override
-  State<Home> createState() {
-    return _HomeState();
-  }
-}
+  final void Function() startQuiz;
 
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -31,7 +26,9 @@ class _HomeState extends State<Home> {
           ),
           SizedBox(height: 20),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              startQuiz();
+            },
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
             ),
@@ -42,5 +39,4 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
 }
