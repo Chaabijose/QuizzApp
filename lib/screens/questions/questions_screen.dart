@@ -17,18 +17,24 @@ class _QuestionsState extends State<QuestionsScreen> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(currentQuestion.text, style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-          ),),
-          SizedBox(height: 30),
-          ...currentQuestion.answers.map((answer) {
-            return AnswerButton(answerText: answer, onTap: () {});
-          }),
-        ],
+      child: Container(
+        margin: EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(currentQuestion.text, style: TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 30),
+            ...currentQuestion.answers.map((answer) {
+              return AnswerButton(answerText: answer, onTap: () {});
+            }),
+          ],
+        ),
       ),
     );
   }
